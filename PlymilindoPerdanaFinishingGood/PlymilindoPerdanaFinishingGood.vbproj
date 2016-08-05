@@ -147,10 +147,26 @@
     <Compile Include="Classes\ClassMstMember.vb" />
     <Compile Include="Classes\CryptText.vb" />
     <Compile Include="Classes\ReadConfig.vb" />
+    <Compile Include="Dataset\DataSetCategory.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetCategory.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Dataset\DataSetCustomer.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetCustomer.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Dataset\DataSetUser.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSetUser.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormCategory.Designer.vb">
+      <DependentUpon>FormCategory.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormCategory.vb">
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\FormChangePassword.Designer.vb">
       <DependentUpon>FormChangePassword.vb</DependentUpon>
@@ -162,6 +178,12 @@
       <DependentUpon>FormCrypt.vb</DependentUpon>
     </Compile>
     <Compile Include="Forms\FormCrypt.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormCustomer.Designer.vb">
+      <DependentUpon>FormCustomer.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormCustomer.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\FormLogin.Designer.vb">
@@ -196,11 +218,17 @@
       <DependentUpon>Application.myapp</DependentUpon>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
+    <EmbeddedResource Include="Forms\FormCategory.resx">
+      <DependentUpon>FormCategory.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormChangePassword.resx">
       <DependentUpon>FormChangePassword.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormCrypt.resx">
       <DependentUpon>FormCrypt.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormCustomer.resx">
+      <DependentUpon>FormCustomer.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormLogin.resx">
       <DependentUpon>FormLogin.vb</DependentUpon>
@@ -228,6 +256,28 @@
     </Compile>
     <None Include="app.config">
       <SubType>Designer</SubType>
+    </None>
+    <None Include="Dataset\DataSetCategory.xsc">
+      <DependentUpon>DataSetCategory.xsd</DependentUpon>
+    </None>
+    <None Include="Dataset\DataSetCategory.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetCategory.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Dataset\DataSetCategory.xss">
+      <DependentUpon>DataSetCategory.xsd</DependentUpon>
+    </None>
+    <None Include="Dataset\DataSetCustomer.xsc">
+      <DependentUpon>DataSetCustomer.xsd</DependentUpon>
+    </None>
+    <None Include="Dataset\DataSetCustomer.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetCustomer.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Dataset\DataSetCustomer.xss">
+      <DependentUpon>DataSetCustomer.xsd</DependentUpon>
     </None>
     <None Include="Dataset\DataSetUser.xsc">
       <DependentUpon>DataSetUser.xsd</DependentUpon>
