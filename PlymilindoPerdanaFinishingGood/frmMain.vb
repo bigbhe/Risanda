@@ -93,4 +93,13 @@ Partial Public Class frmMain
             FormUser.Show()
         End If
     End Sub
+
+    Private Sub BarButtonItem4_ItemClick(sender As Object, e As ItemClickEventArgs) Handles BarButtonItem4.ItemClick
+        If Me.MdiChildren.Contains(FormChangePassword) Then
+            FormChangePassword.Focus()
+        Else
+            FormChangePassword.MdiParent = Me
+            FormChangePassword.Show()
+        End If
+    End Sub
 End Class

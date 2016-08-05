@@ -79,6 +79,7 @@ Partial Class frmLogin
         Me.Controls.Add(Me.txtPassword)
         Me.Controls.Add(Me.txtUsername)
         Me.Name = "frmLogin"
+        Me.Tag = "101"
         Me.Text = "FormLogin"
         CType(Me.txtUsername.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtPassword.Properties, System.ComponentModel.ISupportInitialize).EndInit()

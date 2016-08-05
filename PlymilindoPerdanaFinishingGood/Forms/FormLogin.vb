@@ -40,7 +40,6 @@
             'frmOpenBranch.Show()
             AppliedRightsRibbon()
 
-
         Else
             Application.ExitThread()
         End If
@@ -49,7 +48,7 @@
         '
         ' UI level validation
         '
-        txtUsername.Text = "admin"
+        txtUsername.Text = "Dian"
         txtPassword.Text = "admin"
 
         If txtUsername.Text.Length = 0 Then

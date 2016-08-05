@@ -38,7 +38,10 @@
         Me.memberMenu = New DevExpress.XtraBars.BarButtonItem()
         Me.BarButtonItem2 = New DevExpress.XtraBars.BarButtonItem()
         Me.BarButtonItem3 = New DevExpress.XtraBars.BarButtonItem()
+        Me.BarButtonItem1 = New DevExpress.XtraBars.BarButtonItem()
+        Me.BarButtonItem4 = New DevExpress.XtraBars.BarButtonItem()
         Me.rpgMaster = New DevExpress.XtraBars.Ribbon.RibbonPage()
+        Me.RibbonPageGroup1 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
         Me.rpgTransaction = New DevExpress.XtraBars.Ribbon.RibbonPage()
         Me.rpgReports = New DevExpress.XtraBars.Ribbon.RibbonPage()
         Me.rpgSettings = New DevExpress.XtraBars.Ribbon.RibbonPage()
@@ -48,9 +51,6 @@
         Me.ttcMain = New DevExpress.Utils.ToolTipController(Me.components)
         Me.tmrMain = New System.Windows.Forms.Timer(Me.components)
         Me.mdiManager = New DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(Me.components)
-        Me.RibbonPageGroup1 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
-        Me.BarButtonItem1 = New DevExpress.XtraBars.BarButtonItem()
-        Me.BarButtonItem4 = New DevExpress.XtraBars.BarButtonItem()
         CType(Me.ribcMain, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.BarAndDockingController, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.mdiManager, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -173,12 +173,37 @@
         Me.BarButtonItem3.Id = 20
         Me.BarButtonItem3.Name = "BarButtonItem3"
         '
+        'BarButtonItem1
+        '
+        Me.BarButtonItem1.Caption = "User"
+        Me.BarButtonItem1.Glyph = CType(resources.GetObject("BarButtonItem1.Glyph"), System.Drawing.Image)
+        Me.BarButtonItem1.Id = 22
+        Me.BarButtonItem1.LargeGlyph = CType(resources.GetObject("BarButtonItem1.LargeGlyph"), System.Drawing.Image)
+        Me.BarButtonItem1.Name = "BarButtonItem1"
+        Me.BarButtonItem1.Tag = "101"
+        '
+        'BarButtonItem4
+        '
+        Me.BarButtonItem4.Caption = "Change Password"
+        Me.BarButtonItem4.Glyph = CType(resources.GetObject("BarButtonItem4.Glyph"), System.Drawing.Image)
+        Me.BarButtonItem4.Id = 23
+        Me.BarButtonItem4.LargeGlyph = CType(resources.GetObject("BarButtonItem4.LargeGlyph"), System.Drawing.Image)
+        Me.BarButtonItem4.Name = "BarButtonItem4"
+        Me.BarButtonItem4.Tag = "100"
+        '
         'rpgMaster
         '
         Me.rpgMaster.Groups.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPageGroup() {Me.RibbonPageGroup1})
         Me.rpgMaster.Name = "rpgMaster"
         Me.rpgMaster.Tag = "100"
         Me.rpgMaster.Text = "Master"
+        '
+        'RibbonPageGroup1
+        '
+        Me.RibbonPageGroup1.ItemLinks.Add(Me.BarButtonItem1)
+        Me.RibbonPageGroup1.ItemLinks.Add(Me.BarButtonItem4)
+        Me.RibbonPageGroup1.Name = "RibbonPageGroup1"
+        Me.RibbonPageGroup1.Text = "User Menu"
         '
         'rpgTransaction
         '
@@ -241,29 +266,6 @@
         Me.mdiManager.Controller = Me.BarAndDockingController
         Me.mdiManager.MdiParent = Me
         '
-        'RibbonPageGroup1
-        '
-        Me.RibbonPageGroup1.ItemLinks.Add(Me.BarButtonItem1)
-        Me.RibbonPageGroup1.ItemLinks.Add(Me.BarButtonItem4)
-        Me.RibbonPageGroup1.Name = "RibbonPageGroup1"
-        Me.RibbonPageGroup1.Text = "User Menu"
-        '
-        'BarButtonItem1
-        '
-        Me.BarButtonItem1.Caption = "User"
-        Me.BarButtonItem1.Glyph = CType(resources.GetObject("BarButtonItem1.Glyph"), System.Drawing.Image)
-        Me.BarButtonItem1.Id = 22
-        Me.BarButtonItem1.LargeGlyph = CType(resources.GetObject("BarButtonItem1.LargeGlyph"), System.Drawing.Image)
-        Me.BarButtonItem1.Name = "BarButtonItem1"
-        '
-        'BarButtonItem4
-        '
-        Me.BarButtonItem4.Caption = "Change Password"
-        Me.BarButtonItem4.Glyph = CType(resources.GetObject("BarButtonItem4.Glyph"), System.Drawing.Image)
-        Me.BarButtonItem4.Id = 23
-        Me.BarButtonItem4.LargeGlyph = CType(resources.GetObject("BarButtonItem4.LargeGlyph"), System.Drawing.Image)
-        Me.BarButtonItem4.Name = "BarButtonItem4"
-        '
         'frmMain
         '
         Me.AllowFormGlass = DevExpress.Utils.DefaultBoolean.[False]
@@ -280,6 +282,7 @@
         Me.Ribbon = Me.ribcMain
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.StatusBar = Me.rsbMain
+        Me.Tag = "100"
         Me.Text = "-<|||>--<|||>--<|||>-Finishing Good -<|||>--<|||>--<|||>-"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         CType(Me.ribcMain, System.ComponentModel.ISupportInitialize).EndInit()
