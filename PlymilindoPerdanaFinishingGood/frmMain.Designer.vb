@@ -44,11 +44,15 @@
         Me.BarButtonItem6 = New DevExpress.XtraBars.BarButtonItem()
         Me.BarButtonItem7 = New DevExpress.XtraBars.BarButtonItem()
         Me.BarButtonItem8 = New DevExpress.XtraBars.BarButtonItem()
+        Me.BarButtonItem9 = New DevExpress.XtraBars.BarButtonItem()
+        Me.BarButtonItem10 = New DevExpress.XtraBars.BarButtonItem()
+        Me.BarButtonItem11 = New DevExpress.XtraBars.BarButtonItem()
         Me.rpgMaster = New DevExpress.XtraBars.Ribbon.RibbonPage()
         Me.RibbonPageGroup1 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
         Me.RibbonPageGroup3 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
         Me.RibbonPageGroup2 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
         Me.rpgTransaction = New DevExpress.XtraBars.Ribbon.RibbonPage()
+        Me.RibbonPageGroup4 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
         Me.rpgReports = New DevExpress.XtraBars.Ribbon.RibbonPage()
         Me.rpgSettings = New DevExpress.XtraBars.Ribbon.RibbonPage()
         Me.RibbonPageGroup6 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
@@ -66,9 +70,9 @@
         '
         Me.ribcMain.Controller = Me.BarAndDockingController
         Me.ribcMain.ExpandCollapseItem.Id = 0
-        Me.ribcMain.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.ribcMain.ExpandCollapseItem, Me.lblInfo, Me.lblUserInfo, Me.lblBranchInfo, Me.lblDateTime, Me.btnLogout, Me.btnSwitchBranch, Me.btnChangePwd, Me.SkinRibbonGalleryBarItem1, Me.groupMenu, Me.memberMenu, Me.BarButtonItem2, Me.BarButtonItem3, Me.BarButtonItem1, Me.BarButtonItem4, Me.BarButtonItem5, Me.BarButtonItem6, Me.BarButtonItem7, Me.BarButtonItem8})
+        Me.ribcMain.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.ribcMain.ExpandCollapseItem, Me.lblInfo, Me.lblUserInfo, Me.lblBranchInfo, Me.lblDateTime, Me.btnLogout, Me.btnSwitchBranch, Me.btnChangePwd, Me.SkinRibbonGalleryBarItem1, Me.groupMenu, Me.memberMenu, Me.BarButtonItem2, Me.BarButtonItem3, Me.BarButtonItem1, Me.BarButtonItem4, Me.BarButtonItem5, Me.BarButtonItem6, Me.BarButtonItem7, Me.BarButtonItem8, Me.BarButtonItem9, Me.BarButtonItem10, Me.BarButtonItem11})
         Me.ribcMain.Location = New System.Drawing.Point(0, 0)
-        Me.ribcMain.MaxItemId = 28
+        Me.ribcMain.MaxItemId = 31
         Me.ribcMain.Name = "ribcMain"
         Me.ribcMain.PageHeaderItemLinks.Add(Me.btnChangePwd)
         Me.ribcMain.PageHeaderItemLinks.Add(Me.btnSwitchBranch)
@@ -215,7 +219,7 @@
         '
         'BarButtonItem7
         '
-        Me.BarButtonItem7.Caption = "List Of Customer"
+        Me.BarButtonItem7.Caption = "Customer"
         Me.BarButtonItem7.Glyph = CType(resources.GetObject("BarButtonItem7.Glyph"), System.Drawing.Image)
         Me.BarButtonItem7.Id = 26
         Me.BarButtonItem7.LargeGlyph = CType(resources.GetObject("BarButtonItem7.LargeGlyph"), System.Drawing.Image)
@@ -228,6 +232,30 @@
         Me.BarButtonItem8.Id = 27
         Me.BarButtonItem8.LargeGlyph = CType(resources.GetObject("BarButtonItem8.LargeGlyph"), System.Drawing.Image)
         Me.BarButtonItem8.Name = "BarButtonItem8"
+        '
+        'BarButtonItem9
+        '
+        Me.BarButtonItem9.Caption = "List Of Customer"
+        Me.BarButtonItem9.Glyph = CType(resources.GetObject("BarButtonItem9.Glyph"), System.Drawing.Image)
+        Me.BarButtonItem9.Id = 28
+        Me.BarButtonItem9.LargeGlyph = CType(resources.GetObject("BarButtonItem9.LargeGlyph"), System.Drawing.Image)
+        Me.BarButtonItem9.Name = "BarButtonItem9"
+        '
+        'BarButtonItem10
+        '
+        Me.BarButtonItem10.Caption = "Unit"
+        Me.BarButtonItem10.Glyph = CType(resources.GetObject("BarButtonItem10.Glyph"), System.Drawing.Image)
+        Me.BarButtonItem10.Id = 29
+        Me.BarButtonItem10.LargeGlyph = CType(resources.GetObject("BarButtonItem10.LargeGlyph"), System.Drawing.Image)
+        Me.BarButtonItem10.Name = "BarButtonItem10"
+        '
+        'BarButtonItem11
+        '
+        Me.BarButtonItem11.Caption = "Receive Item"
+        Me.BarButtonItem11.Glyph = CType(resources.GetObject("BarButtonItem11.Glyph"), System.Drawing.Image)
+        Me.BarButtonItem11.Id = 30
+        Me.BarButtonItem11.LargeGlyph = CType(resources.GetObject("BarButtonItem11.LargeGlyph"), System.Drawing.Image)
+        Me.BarButtonItem11.Name = "BarButtonItem11"
         '
         'rpgMaster
         '
@@ -246,11 +274,13 @@
         'RibbonPageGroup3
         '
         Me.RibbonPageGroup3.ItemLinks.Add(Me.BarButtonItem7)
+        Me.RibbonPageGroup3.ItemLinks.Add(Me.BarButtonItem9)
         Me.RibbonPageGroup3.Name = "RibbonPageGroup3"
         Me.RibbonPageGroup3.Text = "Customer"
         '
         'RibbonPageGroup2
         '
+        Me.RibbonPageGroup2.ItemLinks.Add(Me.BarButtonItem10)
         Me.RibbonPageGroup2.ItemLinks.Add(Me.BarButtonItem5)
         Me.RibbonPageGroup2.ItemLinks.Add(Me.BarButtonItem6)
         Me.RibbonPageGroup2.ItemLinks.Add(Me.BarButtonItem8)
@@ -259,9 +289,17 @@
         '
         'rpgTransaction
         '
+        Me.rpgTransaction.Groups.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPageGroup() {Me.RibbonPageGroup4})
         Me.rpgTransaction.Name = "rpgTransaction"
         Me.rpgTransaction.Tag = "200"
         Me.rpgTransaction.Text = "Transaction"
+        '
+        'RibbonPageGroup4
+        '
+        Me.RibbonPageGroup4.AllowTextClipping = False
+        Me.RibbonPageGroup4.ItemLinks.Add(Me.BarButtonItem11)
+        Me.RibbonPageGroup4.Name = "RibbonPageGroup4"
+        Me.RibbonPageGroup4.Text = "Receive"
         '
         'rpgReports
         '
@@ -335,7 +373,7 @@
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.StatusBar = Me.rsbMain
         Me.Tag = "100"
-        Me.Text = "-<|||>--<|||>--<|||>-Finishing Good -<|||>--<|||>--<|||>-"
+        Me.Text = "Finishing Good "
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         CType(Me.ribcMain, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.BarAndDockingController, System.ComponentModel.ISupportInitialize).EndInit()
@@ -379,4 +417,8 @@
     Friend WithEvents BarButtonItem7 As BarButtonItem
     Friend WithEvents BarButtonItem8 As BarButtonItem
     Friend WithEvents RibbonPageGroup3 As RibbonPageGroup
+    Friend WithEvents BarButtonItem9 As BarButtonItem
+    Friend WithEvents BarButtonItem10 As BarButtonItem
+    Friend WithEvents BarButtonItem11 As BarButtonItem
+    Friend WithEvents RibbonPageGroup4 As RibbonPageGroup
 End Class

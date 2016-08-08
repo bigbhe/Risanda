@@ -120,4 +120,40 @@ Partial Public Class frmMain
             FormCustomer.Show()
         End If
     End Sub
+
+    Private Sub BarButtonItem9_ItemClick(sender As Object, e As ItemClickEventArgs) Handles BarButtonItem9.ItemClick
+        If Me.MdiChildren.Contains(FormListCustomer) Then
+            FormListCustomer.Focus()
+        Else
+            FormListCustomer.MdiParent = Me
+            FormListCustomer.Show()
+        End If
+    End Sub
+
+    Private Sub BarButtonItem10_ItemClick(sender As Object, e As ItemClickEventArgs) Handles BarButtonItem10.ItemClick
+        If Me.MdiChildren.Contains(FormUnit) Then
+            FormUnit.Focus()
+        Else
+            FormUnit.MdiParent = Me
+            FormUnit.Show()
+        End If
+    End Sub
+
+    Private Sub BarButtonItem6_ItemClick(sender As Object, e As ItemClickEventArgs) Handles BarButtonItem6.ItemClick
+        If Me.MdiChildren.Contains(FormItem) Then
+            FormItem.Focus()
+        Else
+            FormItem.MdiParent = Me
+            FormItem.Show()
+        End If
+    End Sub
+
+    Private Sub BarButtonItem11_ItemClick(sender As Object, e As ItemClickEventArgs) Handles BarButtonItem11.ItemClick
+        If Me.MdiChildren.Contains(FormTraReceiveHeader) Then
+            FormTraReceiveHeader.Focus()
+        Else
+            FormTraReceiveHeader.MdiParent = Me
+            FormTraReceiveHeader.Show()
+        End If
+    End Sub
 End Class

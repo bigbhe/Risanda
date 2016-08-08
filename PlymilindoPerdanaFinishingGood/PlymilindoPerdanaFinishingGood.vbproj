@@ -145,6 +145,7 @@
     <Compile Include="ApplicationEvents.vb" />
     <Compile Include="Classes\ActiveUser.vb" />
     <Compile Include="Classes\ClassMstMember.vb" />
+    <Compile Include="Classes\ClassTraReceive.vb" />
     <Compile Include="Classes\CryptText.vb" />
     <Compile Include="Classes\ReadConfig.vb" />
     <Compile Include="Dataset\DataSetCategory.Designer.vb">
@@ -156,6 +157,29 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSetCustomer.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Dataset\DataSetItem.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetItem.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Dataset\DataSetReceiveDetail.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetReceiveDetail.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Dataset\DataSetReceiveHeader.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetReceiveHeader.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Dataset\DataSetReceiveHeader.vb">
+      <DependentUpon>DataSetReceiveHeader.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Dataset\DataSetUnit.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetUnit.xsd</DependentUpon>
     </Compile>
     <Compile Include="Dataset\DataSetUser.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -186,10 +210,40 @@
     <Compile Include="Forms\FormCustomer.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Forms\FormItem.Designer.vb">
+      <DependentUpon>FormItem.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormItem.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormListCustomer.Designer.vb">
+      <DependentUpon>FormListCustomer.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormListCustomer.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Forms\FormLogin.Designer.vb">
       <DependentUpon>FormLogin.vb</DependentUpon>
     </Compile>
     <Compile Include="Forms\FormLogin.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormReceiveDetail.Designer.vb">
+      <DependentUpon>FormReceiveDetail.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormReceiveDetail.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormTraReceiveHeader.Designer.vb">
+      <DependentUpon>FormTraReceiveHeader.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormTraReceiveHeader.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormUnit.Designer.vb">
+      <DependentUpon>FormUnit.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormUnit.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\FormUser.Designer.vb">
@@ -230,8 +284,23 @@
     <EmbeddedResource Include="Forms\FormCustomer.resx">
       <DependentUpon>FormCustomer.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormItem.resx">
+      <DependentUpon>FormItem.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormListCustomer.resx">
+      <DependentUpon>FormListCustomer.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormLogin.resx">
       <DependentUpon>FormLogin.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormReceiveDetail.resx">
+      <DependentUpon>FormReceiveDetail.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormTraReceiveHeader.resx">
+      <DependentUpon>FormTraReceiveHeader.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormUnit.resx">
+      <DependentUpon>FormUnit.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormUser.resx">
       <DependentUpon>FormUser.vb</DependentUpon>
@@ -278,6 +347,50 @@
     </None>
     <None Include="Dataset\DataSetCustomer.xss">
       <DependentUpon>DataSetCustomer.xsd</DependentUpon>
+    </None>
+    <None Include="Dataset\DataSetItem.xsc">
+      <DependentUpon>DataSetItem.xsd</DependentUpon>
+    </None>
+    <None Include="Dataset\DataSetItem.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetItem.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Dataset\DataSetItem.xss">
+      <DependentUpon>DataSetItem.xsd</DependentUpon>
+    </None>
+    <None Include="Dataset\DataSetReceiveDetail.xsc">
+      <DependentUpon>DataSetReceiveDetail.xsd</DependentUpon>
+    </None>
+    <None Include="Dataset\DataSetReceiveDetail.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetReceiveDetail.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Dataset\DataSetReceiveDetail.xss">
+      <DependentUpon>DataSetReceiveDetail.xsd</DependentUpon>
+    </None>
+    <None Include="Dataset\DataSetReceiveHeader.xsc">
+      <DependentUpon>DataSetReceiveHeader.xsd</DependentUpon>
+    </None>
+    <None Include="Dataset\DataSetReceiveHeader.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetReceiveHeader.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Dataset\DataSetReceiveHeader.xss">
+      <DependentUpon>DataSetReceiveHeader.xsd</DependentUpon>
+    </None>
+    <None Include="Dataset\DataSetUnit.xsc">
+      <DependentUpon>DataSetUnit.xsd</DependentUpon>
+    </None>
+    <None Include="Dataset\DataSetUnit.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetUnit.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Dataset\DataSetUnit.xss">
+      <DependentUpon>DataSetUnit.xsd</DependentUpon>
     </None>
     <None Include="Dataset\DataSetUser.xsc">
       <DependentUpon>DataSetUser.xsd</DependentUpon>

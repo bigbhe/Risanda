@@ -3,9 +3,7 @@
     Public rConfig As New ReadConfig
     Public aUser As New ActiveUser
     Public oMstMember As New ClassMstMember
-    'Public oTraVisit As New ClassTraVisit
-    'Public otraVisit2 As New ClassTraVisit2
-    'Public oQueue As New ClassQueue
+    Public oTraReceive As New ClassTraReceive
 
     Public sqlCnn As SqlConnection
     Public sqlCmd As SqlCommand
