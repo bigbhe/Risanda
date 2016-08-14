@@ -2,11 +2,11 @@
     Private isApproved As Boolean
 
     Private Sub frmLogin_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Me.MdiParent = frmMain
+        '    Me.MdiParent = frmMain
         frmMain.lblUserInfo.Caption = ""
         frmMain.lblBranchInfo.Caption = ""
         isApproved = False
-        Login()
+        'Login()
     End Sub
 
     Private Sub _GotFocus(sender As Object, e As EventArgs) Handles txtUsername.GotFocus, txtPassword.GotFocus
@@ -29,7 +29,7 @@
     End Sub
 
     Private Sub btnSubmit_Click(sender As Object, e As EventArgs) Handles btnSubmit.Click
-
+        Login()
     End Sub
 
     Private Sub frmLogin_FormClosing(sender As Object, e As FormClosingEventArgs) Handles Me.FormClosing
@@ -38,7 +38,7 @@
             ' call form for choosing branch
             '
             'frmOpenBranch.Show()
-            AppliedRightsRibbon()
+            'AppliedRightsRibbon()
 
         Else
             Application.ExitThread()
@@ -48,8 +48,8 @@
         '
         ' UI level validation
         '
-        txtUsername.Text = "Dian"
-        txtPassword.Text = "admin"
+        'txtUsername.Text = "Dian"
+        'txtPassword.Text = "admin"
 
         If txtUsername.Text.Length = 0 Then
             XtraMessageBox.Show("Your account name still empty.", "Data Incomplete", MessageBoxButtons.OK, MessageBoxIcon.Error)
@@ -67,6 +67,13 @@
         aUser.Password = txtPassword.Text 'it will be encrypted in class UserActive
         Select Case aUser.DoValidation
             Case 0
+
+                oAccess.userName = txtUsername.Text
+                oAccess.getUserInfo()
+
+                frmMain.getRightAccess()
+
+
                 isApproved = True
                 Me.Close()
             Case 1

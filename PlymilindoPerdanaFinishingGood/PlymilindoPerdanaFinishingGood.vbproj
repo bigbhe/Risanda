@@ -80,17 +80,25 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="DevExpress.BonusSkins.v16.1" />
+    <Reference Include="DevExpress.Charts.v16.1.Core, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Data.v16.1" />
+    <Reference Include="DevExpress.Office.v16.1.Core, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.PivotGrid.v16.1.Core, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Printing.v16.1.Core" />
+    <Reference Include="DevExpress.RichEdit.v16.1.Core, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Utils.v16.1" />
+    <Reference Include="DevExpress.Utils.v16.1.UI, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraBars.v16.1" />
     <Reference Include="DevExpress.Sparkline.v16.1.Core" />
+    <Reference Include="DevExpress.XtraCharts.v16.1, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraEditors.v16.1" />
     <Reference Include="DevExpress.XtraGauges.v16.1.Core, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraGauges.v16.1.Win, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraGrid.v16.1, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraLayout.v16.1, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraPrinting.v16.1, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraReports.v16.1, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraReports.v16.1.Extensions, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraScheduler.v16.1.Reporting.Extensions, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraScheduler.v16.1, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraScheduler.v16.1.Core, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
@@ -144,7 +152,10 @@
   <ItemGroup>
     <Compile Include="ApplicationEvents.vb" />
     <Compile Include="Classes\ActiveUser.vb" />
+    <Compile Include="Classes\ClassAccessRight.vb" />
     <Compile Include="Classes\ClassMstMember.vb" />
+    <Compile Include="Classes\ClassReport.vb" />
+    <Compile Include="Classes\ClassTraOut.vb" />
     <Compile Include="Classes\ClassTraReceive.vb" />
     <Compile Include="Classes\CryptText.vb" />
     <Compile Include="Classes\ReadConfig.vb" />
@@ -163,6 +174,16 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSetItem.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Dataset\DataSetMappingUser.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetMappingUser.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Dataset\DataSetOutDetail.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetOutDetail.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Dataset\DataSetReceiveDetail.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -175,6 +196,16 @@
     </Compile>
     <Compile Include="Dataset\DataSetReceiveHeader.vb">
       <DependentUpon>DataSetReceiveHeader.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Dataset\DataSetReportItem.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetReportItem.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Dataset\DataSetTraOutHeader.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetTraOutHeader.xsd</DependentUpon>
     </Compile>
     <Compile Include="Dataset\DataSetUnit.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -216,6 +247,12 @@
     <Compile Include="Forms\FormItem.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Forms\FormItemList.Designer.vb">
+      <DependentUpon>FormItemList.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormItemList.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Forms\FormListCustomer.Designer.vb">
       <DependentUpon>FormListCustomer.vb</DependentUpon>
     </Compile>
@@ -228,10 +265,28 @@
     <Compile Include="Forms\FormLogin.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Forms\FormMappingUserPosition.Designer.vb">
+      <DependentUpon>FormMappingUserPosition.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormMappingUserPosition.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Forms\FormReceiveDetail.Designer.vb">
       <DependentUpon>FormReceiveDetail.vb</DependentUpon>
     </Compile>
     <Compile Include="Forms\FormReceiveDetail.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormReportItemByDate.Designer.vb">
+      <DependentUpon>FormReportItemByDate.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormReportItemByDate.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormTraOutHeader.Designer.vb">
+      <DependentUpon>FormTraOutHeader.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormTraOutHeader.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\FormTraReceiveHeader.Designer.vb">
@@ -258,6 +313,12 @@
     <Compile Include="Forms\FrmExpendable.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Forms\traOutDetail.Designer.vb">
+      <DependentUpon>traOutDetail.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\traOutDetail.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmMain.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -272,6 +333,24 @@
       <DependentUpon>Application.myapp</DependentUpon>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="Report\ReportDeliveryPerNumber.Designer.vb">
+      <DependentUpon>ReportDeliveryPerNumber.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Report\ReportDeliveryPerNumber.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\ReportItemByDate.Designer.vb">
+      <DependentUpon>ReportItemByDate.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Report\ReportItemByDate.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\ReportReceivePerNumber.Designer.vb">
+      <DependentUpon>ReportReceivePerNumber.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Report\ReportReceivePerNumber.vb">
+      <SubType>Component</SubType>
+    </Compile>
     <EmbeddedResource Include="Forms\FormCategory.resx">
       <DependentUpon>FormCategory.vb</DependentUpon>
     </EmbeddedResource>
@@ -287,14 +366,26 @@
     <EmbeddedResource Include="Forms\FormItem.resx">
       <DependentUpon>FormItem.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormItemList.resx">
+      <DependentUpon>FormItemList.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormListCustomer.resx">
       <DependentUpon>FormListCustomer.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormLogin.resx">
       <DependentUpon>FormLogin.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormMappingUserPosition.resx">
+      <DependentUpon>FormMappingUserPosition.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormReceiveDetail.resx">
       <DependentUpon>FormReceiveDetail.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormReportItemByDate.resx">
+      <DependentUpon>FormReportItemByDate.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormTraOutHeader.resx">
+      <DependentUpon>FormTraOutHeader.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormTraReceiveHeader.resx">
       <DependentUpon>FormTraReceiveHeader.vb</DependentUpon>
@@ -307,6 +398,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmExpendable.resx">
       <DependentUpon>FrmExpendable.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\traOutDetail.resx">
+      <DependentUpon>traOutDetail.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.vb</DependentUpon>
@@ -323,6 +417,15 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Report\ReportDeliveryPerNumber.resx">
+      <DependentUpon>ReportDeliveryPerNumber.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\ReportItemByDate.resx">
+      <DependentUpon>ReportItemByDate.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\ReportReceivePerNumber.resx">
+      <DependentUpon>ReportReceivePerNumber.vb</DependentUpon>
+    </EmbeddedResource>
     <None Include="app.config">
       <SubType>Designer</SubType>
     </None>
@@ -359,6 +462,28 @@
     <None Include="Dataset\DataSetItem.xss">
       <DependentUpon>DataSetItem.xsd</DependentUpon>
     </None>
+    <None Include="Dataset\DataSetMappingUser.xsc">
+      <DependentUpon>DataSetMappingUser.xsd</DependentUpon>
+    </None>
+    <None Include="Dataset\DataSetMappingUser.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetMappingUser.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Dataset\DataSetMappingUser.xss">
+      <DependentUpon>DataSetMappingUser.xsd</DependentUpon>
+    </None>
+    <None Include="Dataset\DataSetOutDetail.xsc">
+      <DependentUpon>DataSetOutDetail.xsd</DependentUpon>
+    </None>
+    <None Include="Dataset\DataSetOutDetail.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetOutDetail.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Dataset\DataSetOutDetail.xss">
+      <DependentUpon>DataSetOutDetail.xsd</DependentUpon>
+    </None>
     <None Include="Dataset\DataSetReceiveDetail.xsc">
       <DependentUpon>DataSetReceiveDetail.xsd</DependentUpon>
     </None>
@@ -380,6 +505,28 @@
     </None>
     <None Include="Dataset\DataSetReceiveHeader.xss">
       <DependentUpon>DataSetReceiveHeader.xsd</DependentUpon>
+    </None>
+    <None Include="Dataset\DataSetReportItem.xsc">
+      <DependentUpon>DataSetReportItem.xsd</DependentUpon>
+    </None>
+    <None Include="Dataset\DataSetReportItem.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetReportItem.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Dataset\DataSetReportItem.xss">
+      <DependentUpon>DataSetReportItem.xsd</DependentUpon>
+    </None>
+    <None Include="Dataset\DataSetTraOutHeader.xsc">
+      <DependentUpon>DataSetTraOutHeader.xsd</DependentUpon>
+    </None>
+    <None Include="Dataset\DataSetTraOutHeader.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetTraOutHeader.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Dataset\DataSetTraOutHeader.xss">
+      <DependentUpon>DataSetTraOutHeader.xsd</DependentUpon>
     </None>
     <None Include="Dataset\DataSetUnit.xsc">
       <DependentUpon>DataSetUnit.xsd</DependentUpon>
@@ -450,6 +597,7 @@
     <Folder Include="Controls\" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\Avosoft-Warm-Toolbar-Print.png" />
     <Content Include="Settings\config.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

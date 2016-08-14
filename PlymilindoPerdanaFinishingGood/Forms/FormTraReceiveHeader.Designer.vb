@@ -41,6 +41,7 @@ Partial Class FormTraReceiveHeader
         Me.TraReceiveHeaderBindingNavigatorSaveItem = New System.Windows.Forms.ToolStripButton()
         Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
         Me.ToolStripButton1 = New System.Windows.Forms.ToolStripButton()
+        Me.ToolStripButton2 = New System.Windows.Forms.ToolStripButton()
         Me.TraReceiveHeaderGridControl = New DevExpress.XtraGrid.GridControl()
         Me.GridView1 = New DevExpress.XtraGrid.Views.Grid.GridView()
         Me.colid = New DevExpress.XtraGrid.Columns.GridColumn()
@@ -48,6 +49,17 @@ Partial Class FormTraReceiveHeader
         Me.coldate = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.buttonFillDetail = New DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit()
         Me.GroupControl1 = New DevExpress.XtraEditors.GroupControl()
+        Me.ReportReceivePerNumberGridControl = New DevExpress.XtraGrid.GridControl()
+        Me.ReportReceivePerNumberBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.GridView2 = New DevExpress.XtraGrid.Views.Grid.GridView()
+        Me.colreceiveNumber1 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colname = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colamount = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colunit = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.coldate1 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.ReportReceivePerNumberTableAdapter = New PlymilindoPerdanaFinishingGood.DataSetReceiveHeaderTableAdapters.reportReceivePerNumberTableAdapter()
+        Me.ToolStripSeparator2 = New System.Windows.Forms.ToolStripSeparator()
+        Me.ToolStripSeparator3 = New System.Windows.Forms.ToolStripSeparator()
         CType(Me.DataSetReceiveHeader, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TraReceiveHeaderBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TraReceiveHeaderBindingNavigator, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -57,6 +69,9 @@ Partial Class FormTraReceiveHeader
         CType(Me.buttonFillDetail, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl1.SuspendLayout()
+        CType(Me.ReportReceivePerNumberGridControl, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ReportReceivePerNumberBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.GridView2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'DataSetReceiveHeader
@@ -85,7 +100,7 @@ Partial Class FormTraReceiveHeader
         Me.TraReceiveHeaderBindingNavigator.BindingSource = Me.TraReceiveHeaderBindingSource
         Me.TraReceiveHeaderBindingNavigator.CountItem = Me.BindingNavigatorCountItem
         Me.TraReceiveHeaderBindingNavigator.DeleteItem = Me.BindingNavigatorDeleteItem
-        Me.TraReceiveHeaderBindingNavigator.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.BindingNavigatorMoveFirstItem, Me.BindingNavigatorMovePreviousItem, Me.BindingNavigatorSeparator, Me.BindingNavigatorPositionItem, Me.BindingNavigatorCountItem, Me.BindingNavigatorSeparator1, Me.BindingNavigatorMoveNextItem, Me.BindingNavigatorMoveLastItem, Me.BindingNavigatorSeparator2, Me.BindingNavigatorAddNewItem, Me.BindingNavigatorDeleteItem, Me.TraReceiveHeaderBindingNavigatorSaveItem, Me.ToolStripSeparator1, Me.ToolStripButton1})
+        Me.TraReceiveHeaderBindingNavigator.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.BindingNavigatorMoveFirstItem, Me.BindingNavigatorMovePreviousItem, Me.BindingNavigatorSeparator, Me.BindingNavigatorPositionItem, Me.BindingNavigatorCountItem, Me.BindingNavigatorSeparator1, Me.BindingNavigatorMoveNextItem, Me.BindingNavigatorMoveLastItem, Me.BindingNavigatorSeparator2, Me.BindingNavigatorAddNewItem, Me.BindingNavigatorDeleteItem, Me.TraReceiveHeaderBindingNavigatorSaveItem, Me.ToolStripSeparator1, Me.ToolStripButton1, Me.ToolStripSeparator2, Me.ToolStripSeparator3, Me.ToolStripButton2})
         Me.TraReceiveHeaderBindingNavigator.Location = New System.Drawing.Point(0, 0)
         Me.TraReceiveHeaderBindingNavigator.MoveFirstItem = Me.BindingNavigatorMoveFirstItem
         Me.TraReceiveHeaderBindingNavigator.MoveLastItem = Me.BindingNavigatorMoveLastItem
@@ -203,6 +218,14 @@ Partial Class FormTraReceiveHeader
         Me.ToolStripButton1.Size = New System.Drawing.Size(116, 22)
         Me.ToolStripButton1.Text = "ToolStripButton1"
         '
+        'ToolStripButton2
+        '
+        Me.ToolStripButton2.Image = CType(resources.GetObject("ToolStripButton2.Image"), System.Drawing.Image)
+        Me.ToolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.ToolStripButton2.Name = "ToolStripButton2"
+        Me.ToolStripButton2.Size = New System.Drawing.Size(116, 22)
+        Me.ToolStripButton2.Text = "ToolStripButton2"
+        '
         'TraReceiveHeaderGridControl
         '
         Me.TraReceiveHeaderGridControl.DataSource = Me.TraReceiveHeaderBindingSource
@@ -250,12 +273,83 @@ Partial Class FormTraReceiveHeader
         'GroupControl1
         '
         Me.GroupControl1.Controls.Add(Me.TraReceiveHeaderGridControl)
+        Me.GroupControl1.Controls.Add(Me.ReportReceivePerNumberGridControl)
         Me.GroupControl1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.GroupControl1.Location = New System.Drawing.Point(0, 25)
         Me.GroupControl1.Name = "GroupControl1"
         Me.GroupControl1.Size = New System.Drawing.Size(942, 587)
         Me.GroupControl1.TabIndex = 2
         Me.GroupControl1.Text = "GroupControl1"
+        '
+        'ReportReceivePerNumberGridControl
+        '
+        Me.ReportReceivePerNumberGridControl.DataSource = Me.ReportReceivePerNumberBindingSource
+        Me.ReportReceivePerNumberGridControl.Location = New System.Drawing.Point(552, 73)
+        Me.ReportReceivePerNumberGridControl.MainView = Me.GridView2
+        Me.ReportReceivePerNumberGridControl.Name = "ReportReceivePerNumberGridControl"
+        Me.ReportReceivePerNumberGridControl.Size = New System.Drawing.Size(339, 151)
+        Me.ReportReceivePerNumberGridControl.TabIndex = 1
+        Me.ReportReceivePerNumberGridControl.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView2})
+        '
+        'ReportReceivePerNumberBindingSource
+        '
+        Me.ReportReceivePerNumberBindingSource.DataMember = "reportReceivePerNumber"
+        Me.ReportReceivePerNumberBindingSource.DataSource = Me.DataSetReceiveHeader
+        '
+        'GridView2
+        '
+        Me.GridView2.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.colreceiveNumber1, Me.colname, Me.colamount, Me.colunit, Me.coldate1})
+        Me.GridView2.GridControl = Me.ReportReceivePerNumberGridControl
+        Me.GridView2.Name = "GridView2"
+        '
+        'colreceiveNumber1
+        '
+        Me.colreceiveNumber1.FieldName = "receiveNumber"
+        Me.colreceiveNumber1.Name = "colreceiveNumber1"
+        Me.colreceiveNumber1.Visible = True
+        Me.colreceiveNumber1.VisibleIndex = 0
+        '
+        'colname
+        '
+        Me.colname.FieldName = "name"
+        Me.colname.Name = "colname"
+        Me.colname.Visible = True
+        Me.colname.VisibleIndex = 1
+        '
+        'colamount
+        '
+        Me.colamount.FieldName = "amount"
+        Me.colamount.Name = "colamount"
+        Me.colamount.Visible = True
+        Me.colamount.VisibleIndex = 2
+        '
+        'colunit
+        '
+        Me.colunit.FieldName = "unit"
+        Me.colunit.Name = "colunit"
+        Me.colunit.Visible = True
+        Me.colunit.VisibleIndex = 3
+        '
+        'coldate1
+        '
+        Me.coldate1.FieldName = "date"
+        Me.coldate1.Name = "coldate1"
+        Me.coldate1.Visible = True
+        Me.coldate1.VisibleIndex = 4
+        '
+        'ReportReceivePerNumberTableAdapter
+        '
+        Me.ReportReceivePerNumberTableAdapter.ClearBeforeFill = True
+        '
+        'ToolStripSeparator2
+        '
+        Me.ToolStripSeparator2.Name = "ToolStripSeparator2"
+        Me.ToolStripSeparator2.Size = New System.Drawing.Size(6, 25)
+        '
+        'ToolStripSeparator3
+        '
+        Me.ToolStripSeparator3.Name = "ToolStripSeparator3"
+        Me.ToolStripSeparator3.Size = New System.Drawing.Size(6, 25)
         '
         'FormTraReceiveHeader
         '
@@ -277,6 +371,9 @@ Partial Class FormTraReceiveHeader
         CType(Me.buttonFillDetail, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupControl1.ResumeLayout(False)
+        CType(Me.ReportReceivePerNumberGridControl, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ReportReceivePerNumberBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.GridView2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -308,4 +405,16 @@ Partial Class FormTraReceiveHeader
     Friend WithEvents GroupControl1 As GroupControl
     Friend WithEvents ToolStripSeparator1 As ToolStripSeparator
     Friend WithEvents ToolStripButton1 As ToolStripButton
+    Friend WithEvents ReportReceivePerNumberBindingSource As BindingSource
+    Friend WithEvents ReportReceivePerNumberTableAdapter As DataSetReceiveHeaderTableAdapters.reportReceivePerNumberTableAdapter
+    Friend WithEvents ReportReceivePerNumberGridControl As GridControl
+    Friend WithEvents GridView2 As Views.Grid.GridView
+    Friend WithEvents colreceiveNumber1 As Columns.GridColumn
+    Friend WithEvents colname As Columns.GridColumn
+    Friend WithEvents colamount As Columns.GridColumn
+    Friend WithEvents colunit As Columns.GridColumn
+    Friend WithEvents coldate1 As Columns.GridColumn
+    Friend WithEvents ToolStripButton2 As ToolStripButton
+    Friend WithEvents ToolStripSeparator2 As ToolStripSeparator
+    Friend WithEvents ToolStripSeparator3 As ToolStripSeparator
 End Class

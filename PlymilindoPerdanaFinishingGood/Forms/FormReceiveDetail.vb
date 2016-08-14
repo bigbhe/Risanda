@@ -2,9 +2,17 @@
 
 Public Class FormReceiveDetail
     Private Sub TraReceiveDetailBindingNavigatorSaveItem_Click(sender As Object, e As EventArgs) Handles TraReceiveDetailBindingNavigatorSaveItem.Click
-        Me.Validate()
-        Me.TraReceiveDetailBindingSource.EndEdit()
-        Me.TableAdapterManager.UpdateAll(Me.DataSetReceiveDetail)
+        Try
+            Me.Validate()
+            Me.TraReceiveDetailBindingSource.EndEdit()
+            Me.TableAdapterManager.UpdateAll(Me.DataSetReceiveDetail)
+        Catch ex As Exception
+            If ex.Message.ToString.ToLower.Contains("constrained") Then
+                Beep()
+                alertDialogUc(Me, "Cannot Insert Duplicate Data")
+            End If
+        End Try
+
 
     End Sub
 

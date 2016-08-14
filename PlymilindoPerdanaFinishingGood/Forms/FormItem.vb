@@ -1,4 +1,6 @@
-﻿Public Class FormItem
+﻿Imports DevExpress.XtraGrid.Views.Grid
+
+Public Class FormItem
     Private Sub MstItemBindingNavigatorSaveItem_Click(sender As Object, e As EventArgs) Handles MstItemBindingNavigatorSaveItem.Click
         Me.Validate()
         Me.MstItemBindingSource.EndEdit()

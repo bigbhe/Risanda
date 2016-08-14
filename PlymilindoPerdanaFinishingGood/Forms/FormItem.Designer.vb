@@ -245,9 +245,13 @@ Partial Class FormItem
         '
         'GridView1
         '
+        Me.GridView1.Appearance.OddRow.BackColor = System.Drawing.Color.White
+        Me.GridView1.Appearance.OddRow.BackColor2 = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.GridView1.Appearance.OddRow.Options.UseBackColor = True
         Me.GridView1.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.colid, Me.colcode, Me.colidCategory, Me.colname, Me.colunit})
         Me.GridView1.GridControl = Me.MstItemGridControl
         Me.GridView1.Name = "GridView1"
+        Me.GridView1.OptionsView.EnableAppearanceOddRow = True
         '
         'colid
         '

@@ -10,5 +10,8 @@
 &lt;/SerializableConnectionString&gt;</DesignTimeValue>
       <Value Profile="(Default)">Data Source=localhost;Initial Catalog=PlymilindoPerdanaFinishingGood;Integrated Security=True</Value>
     </Setting>
+    <Setting Name="Skins" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Caramel</Value>
+    </Setting>
   </Settings>
 </SettingsFile>
